@@ -4,15 +4,24 @@ import "./User.sol";
 
 contract Customer is User {
     
+    uint min_amount = 23;
+    
+    
     struct location {
         
-        //position pickup,drop;
+        position pickup,drop;
         
     }
     
     location[] history;
     
     mapping(address => location[]) public Customer_history;
+
+    modifier minBalance()
+    {
+        require(msg.sender.balance >= min_amount);
+        _;
+    }
     
     address private owner;
   
@@ -24,17 +33,16 @@ contract Customer is User {
         return owner;
     }
   
-    function getBalance() public view returns(uint256){
-        return owner.balance;
+    // function getBalance() public view returns(uint256){
+    //     return msg.sender.balance;
     }
     
-    uint current_balance = getBalance();
-    uint min_amount = 23;
-    require( current_balance <= min_amount);
+    // uint current_balance = getBalance();
+    // require( current_balance <= min_amount);
 
     location l1;
     
-    function getpickup(fixed latitude, fixed longitude) internal {
+    function getpickup(fixed latitude, fixed longitude) internal minBalance {
         
         l1.pickup.latitude = latitude;
         l1.pickup.longitude = longitude;
