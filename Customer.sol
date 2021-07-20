@@ -49,7 +49,7 @@ contract Customer is User
     // make modifier for user type
     modifier isCustomer()
     {
-        require(mapData[msg.sender].userType == 0);
+        require(mapData[msg.sender].userType == false);
         _;
     }
     
