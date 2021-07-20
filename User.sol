@@ -17,4 +17,18 @@ contract User {
 
     mapping(address => userData) mapData;
     
+    event DisplayUserData(userData u);
+
+    // DAO, DTO
+
+    function getUserData() public
+    {
+        emit DisplayUserData(mapData[msg.sender]);
+    }
+
+    function setUserData(userData calldata _u) public
+    {
+        mapData[msg.sender] = _u;
+        // if direct initializing doesn't work, initialize individual members
+    }
 }
