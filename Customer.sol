@@ -1,64 +1,95 @@
-pragma solidity ^0.4.17;
+pragma solidity ^0.8.0;
 
 import "./User.sol";
+import "./Driver.sol";
 
-contract Customer is User {
+contract Customer is User 
+{
+
+    // STATE VARIABLES
+    Driver driver;
     
     uint min_amount = 23;
     
+    location l1;
     
-    struct location {
+    address private owner;
+
+    
+
+    // STRUCTS AND MAPS
+    
+    struct location
+    {
         
-        position pickup,drop;
+        position pickup;
+        position drop;
         
     }
+    mapping(address => location[]) public customerHistory;
     
-    location[] history;
-    
-    mapping(address => location[]) public Customer_history;
+    // CONSTRUCTOR
+
+    constructor(Driver _driver) public
+    {   
+        owner=msg.sender;
+        driver = Driver(_driver);
+    }
+
+    // EVENTS
+    event RequestedRide(string name, position pickup, position drop);
+
+    // MODIFIERS AND FUNCTIONS
 
     modifier minBalance()
     {
         require(msg.sender.balance >= min_amount);
         _;
     }
-    
-    address private owner;
-  
-     constructor() public{   
-        owner=msg.sender;
+    // make modifier for user type
+    modifier isCustomer()
+    {
+        require(mapData[msg.sender].userType == 0);
+        _;
     }
     
-    function getOwner() public view returns (address) {    
-        return owner;
-    }
+    
+    // function getOwner() public view returns (address) 
+    // {    
+    //     return owner;
+    // }
   
     // function getBalance() public view returns(uint256){
     //     return msg.sender.balance;
-    }
+    // }
     
     // uint current_balance = getBalance();
     // require( current_balance <= min_amount);
 
-    location l1;
     
-    function getpickup(fixed latitude, fixed longitude) internal minBalance {
+    function getPickup(int latitude, int longitude) public {
         
         l1.pickup.latitude = latitude;
         l1.pickup.longitude = longitude;
     }
     
-    function getdrop(fixed latitude, fixed longitude) internal {
+    function getDrop(int latitude, int longitude) internal {
         
         l1.drop.latitude = latitude;
         l1.drop.longitude = longitude;
         
     }
     
-    function up_history() internal {
+    function updateHistory() internal {
         
-        history.push(l1.pickup,l1.push);
-        
+        // history.push(l1);
+        customerHistory[msg.sender].push(l1);
     }
-    
+    // function completeTxn() -> use modifier for min bal
+    function requestRide() public {
+        // if txn complete 
+        emit RequestedRide(mapData[msg.sender].name, l1.pickup, l1.drop);
+        // if structure members aren't accessible pass explicitly
+        // emit RequestedRide(mapData[msg.sender].name, l1.pickup.latitude, l1.pickup.longitude, l1.drop.latitude, l1.drop.longitude);
+    }
 }
