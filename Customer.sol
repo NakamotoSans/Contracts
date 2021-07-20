@@ -67,13 +67,13 @@ contract Customer is User
     // require( current_balance <= min_amount);
 
     
-    function getPickup(int latitude, int longitude) public {
+    function setPickup(int latitude, int longitude) public {
         
         l1.pickup.latitude = latitude;
         l1.pickup.longitude = longitude;
     }
     
-    function getDrop(int latitude, int longitude) internal {
+    function setDrop(int latitude, int longitude) internal {
         
         l1.drop.latitude = latitude;
         l1.drop.longitude = longitude;
