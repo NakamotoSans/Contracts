@@ -1,10 +1,20 @@
-pragma solidity ^0.4.17;
+pragma solidity ^0.8.0;
 
 contract User {
     
-    string private user_name;
-    string private bio_data;
-    ufixed private balance;
-    bool user_type;                     //0 for customer and 1 for driver
+    struct userData
+    {
+        string name;
+        string bioData;
+        // ufixed private balance;
+        bool userType;                     //false for customer and true for driver
+    }
+
+    struct position{
+        int latitude;
+        int longitude;
+    }
+
+    mapping(address => userData) mapData;
     
 }
