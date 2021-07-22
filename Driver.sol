@@ -20,7 +20,9 @@ contract Driver is User{
 
     event ShowAvailability(bool isAvailable);
 
-    event AcceptedRide(string name, position pickup, position drop, details info);
+    // event AcceptedRide(string name, position pickup, position drop, details info);
+    event AcceptedRide(ride r, details info);
+
 
 
     function setDriverDetails(string calldata _licenseNo, int _vehicleType, int _experience) public
@@ -37,14 +39,22 @@ contract Driver is User{
         emit ShowAvailability(driverDetails[msg.sender].isAvailable);
     }
 
-    function getRide(string calldata _name,position calldata _pickup, position calldata _drop, bool _accept) public payable
+    // function getRide(string calldata _name,position calldata _pickup, position calldata _drop, bool _accept) public payable
+    // {
+    //     if (_accept == true)
+    //     {
+    //         driverDetails[msg.sender].isAvailable = false;
+    //         emit AcceptedRide(_name,_pickup,_drop,driverDetails[msg.sender]);
+    //     }
+    // }
+    // if structure members aren't accessible, pass explicitly
+    function getRide(ride calldata _r,bool _accept) public
     {
-        if (_accept == true)
-        {
+        if(_accept == true){
             driverDetails[msg.sender].isAvailable = false;
-            emit AcceptedRide(_name,_pickup,_drop,driverDetails[msg.sender]);
+            emit AcceptedRide(_r, driverDetails[msg.sender]);
         }
     }
-    // if structure members aren't accessible, pass explicitly
+    
     
 }

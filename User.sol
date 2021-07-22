@@ -15,6 +15,15 @@ contract User {
         int longitude;
     }
 
+    struct ride{
+        // userData user;
+        string name; // customer name
+        address customer;
+        position pickup;
+        position drop;
+        bool isInRequestState;
+    }
+
     mapping(address => userData) mapData;
     
     event DisplayUserData(userData u);
