@@ -11,6 +11,7 @@ contract Driver is User{
         bool isAvailable; // false - unavailable, true - available
         string licenseNo;
         int vehicleType; // no of seats
+        string vehicleModel;
         int experience; // years
         // rest to be filled later
     }
@@ -23,7 +24,7 @@ contract Driver is User{
     // event AcceptedRide(string name, position pickup, position drop, details info);
     event AcceptedRide(ride r, details info);
 
-
+    event ShowCurrentRides(ride[] r);
 
     function setDriverDetails(string calldata _licenseNo, int _vehicleType, int _experience) public
     {
@@ -39,15 +40,20 @@ contract Driver is User{
         emit ShowAvailability(driverDetails[msg.sender].isAvailable);
     }
 
-    // function getRide(string calldata _name,position calldata _pickup, position calldata _drop, bool _accept) public payable
-    // {
-    //     if (_accept == true)
-    //     {
-    //         driverDetails[msg.sender].isAvailable = false;
-    //         emit AcceptedRide(_name,_pickup,_drop,driverDetails[msg.sender]);
-    //     }
-    // }
     // if structure members aren't accessible, pass explicitly
+
+    function getCurrentRides() public{
+        // emit ShowCurrentRide(customerCurrentRide[_customer]);
+        uint l = requestingCustomers.length;
+        // ride[] rideList;
+        for(uint i=0;i<l;i++)
+        {
+            rideList.push(customerCurrentRide[requestingCustomers[i]]);
+        }
+        emit ShowCurrentRides(rideList);
+        // delete rideList;
+    }
+
     function getRide(ride calldata _r,bool _accept) public
     {
         if(_accept == true){
@@ -56,5 +62,7 @@ contract Driver is User{
         }
     }
     
-    
+    function makeAvailable() public{
+        driverDetails[msg.sender].isAvailable = true;
+    }
 }
