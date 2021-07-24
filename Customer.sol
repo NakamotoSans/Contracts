@@ -9,16 +9,14 @@ contract Customer is User,Driver
     
     struct location
     {
-        
         position pickup;
         position drop;
-        
     }
     mapping(address => location[]) public customerHistory;
     
     
     // STATE VARIABLES
-    Driver driver = new Driver();
+    // Driver driver = new Driver();
     
     uint min_amount = 23;
     
@@ -29,11 +27,11 @@ contract Customer is User,Driver
     
     
     // CONSTRUCTOR
-
-    constructor(Driver _driver) public
+    // constructor(Driver _driver)
+    constructor() public
     {   
         owner=msg.sender;
-        driver = Driver(_driver);
+        // driver = Driver(_driver);
     }
 
     // EVENTS
@@ -56,60 +54,36 @@ contract Customer is User,Driver
     }
     
     
-    // function getOwner() public view returns (address) 
-    // {    
-    //     return owner;
-    // }
-  
-    // function getBalance() public view returns(uint256){
-    //     return msg.sender.balance;
-    // }
-    
-    // uint current_balance = getBalance();
-    // require( current_balance <= min_amount);
-
-    
-    // function setPickup(int latitude, int longitude) public {
-        
-    //     l1.pickup.latitude = latitude;
-    //     l1.pickup.longitude = longitude;
-    // }
-    
-    // function setDrop(int latitude, int longitude) internal {
-        
-    //     l1.drop.latitude = latitude;
-    //     l1.drop.longitude = longitude;
-        
-    // }
-    
     function updateHistory() internal {
         
         // history.push(l1);
         customerHistory[msg.sender].push(l1);
     }
-    // function completeTxn() -> use modifier for min bal
-    // function requestRide() public {
-    //     // if txn complete 
-    //     r1.name = mapData[msg.sender].name;
-    //     // emit RequestedRide(mapData[msg.sender].name, msg.sender, l1.pickup, l1.drop);
-    //     // if structure members aren't accessible pass explicitly
-    //     // emit RequestedRide(mapData[msg.sender].name, l1.pickup.latitude, l1.pickup.longitude, l1.drop.latitude, l1.drop.longitude);
-    // }
 
     function requestRide(position calldata _pickup, position calldata _drop) public{
         r1.name = mapData[msg.sender].name;  
-        r1.customer = msg.sender;
+        // r1.customer = msg.sender;
         r1.pickup = _pickup;
         r1.drop = _drop;
         r1.isInRequestState = true;
+        // array.push(r1)
+        // activeRides.push(r1);
+        customerCurrentRide[msg.sender] = r1;
+       false".push(msg.sender);
         emit RequestedRide(r1);
     }
 
-    function viewCompletedRideRequest(ride calldata _r, address _driver, details calldata _driverInfo) public
+    // DYNAMIC ARRAY OF CUSTOMER RIDES -> CUSTOMER
+    function viewCompletedRideRequest(uint acceptedCustomerIndex, address _driver, details calldata _driverInfo) public
     {
         // mapData[msg.sender], accessible
+        r1 = customerCurrentRide[msg.sender];
         r1.isInRequestState = false;
-        emit ViewAccrptedRide(_r, _driver, _driverInfo);
+        emit ViewAccrptedRide(r1, _driver, _driverInfo);
+        // delete activeRides[rideIndex];
+        delete customerCurrentRide[msg.sender];
+        delete requestingCustomers[acceptedCustomerIndex];
     }
 
+    // function rateDriver()
 }

@@ -16,15 +16,21 @@ contract User {
     }
 
     struct ride{
-        // userData user;
+        // userData customer;
         string name; // customer name
-        address customer;
+        // address customer;
         position pickup;
         position drop;
         bool isInRequestState;
     }
 
     mapping(address => userData) mapData;
+    
+    mapping(address => ride) customerCurrentRide;
+    address[] requestingCustomers;
+    ride[] rideList;
+
+    // ride[] activeRides;
     
     event DisplayUserData(userData u);
 
