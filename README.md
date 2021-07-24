@@ -1,15 +1,33 @@
-# Implementation of Coffee Supplychain using Ethereum Smart Contract
+# Implementation of Decentralised Taxi Hailing Service using Ethereum Smart Contract
 
-This project showcases the journey of coffee beans on blockchain. 
+This project showcases the interaction between the commuter and driver during the course of booking a ride on blockchain. 
 
-The coffee supply chain is the sequence of activities and process  to bring raw coffee beans from coffee farms to processed coffee in markets. 
+dRyver handles the sequence of activities and processes smoothly to make the experiance of travelling seamless.
 
 #### Problems in Existing System
 ---
 
-- Currently Coffee trade mostly relies on fax machines and emails to send and recieve contracts across the globe, resulting into slower and error prone paper work.
+-Applications like Uber provide a matching service and apparently decentralize it. 
+This is P2P technology at its finest .
+Or is it? Several scandals have emerged out of {Uber’s corporate culture as of late.
+Uber has become notorious both for its business practices, and for what it incentivi‐
+zes and allows its drivers to do. Uber executive Emil Michael told the company to dig
+up dirt on a particular critical female reporter as well as other opponents. The power
+the company exerts over its drivers has grown from surveillance into possibly preda‐
+tory lending practices. Uber’s “God Mode,” the ability to see all rides happening in
+any location in real time with all social data attached to each rider, has been the sub‐
+ject of controversy on multiple occasions. Drivers, meanwhile, have been known to
+hail Lyft cabs only to cancel them, so that riders would instead choose Uber.
+Despite these concerns, Uber has grown at an exponential rate over the past few years
+and is showing revenue numbers in the billions. It provides a useful service: people
+prefer using a location-aware app to hail a ride over calling a taxi, and it’s safe to
+say the demand for real-time ride-sharing isn’t going away anytime soon. But privacy
+invasion and the vast imbalance of power between a billion-dollar corporation and its
+87 contractors are the negatives of Uber that riders must accept when they use its ser‐
+vice.
 
-- Blockchain can solve this by providing immutable and verifiable data sources
+
+- Blockchain can solve this by providing immutable and verifiable data sources.
 
 		
  
@@ -17,7 +35,9 @@ The coffee supply chain is the sequence of activities and process  to bring raw 
 #### What we are providing?
 ---
 
-- We have implemented smart contract addressing the issue of storing critical data necessary at different stages of supplychain and making it verifiable by all stakeholders in supplychain.
+- We have implemented smart contract addressing the issue of storing critical data necessary at different stages of Taxi Hailing and making it verifiable by all stakeholders in dRyver.
+
+-We eliminate the existence of middle agency, Thereby completely removing the regulation of salaries of drivers by corporations. And in that 
 
 
 #### Application Workflow Diagram
