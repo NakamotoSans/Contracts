@@ -131,6 +131,21 @@ cd COntracts/
  </table>	
 </p>
 
+####How to use Remix for deploying contracts
+
+Steps to Execute Solidity Smart Contract using Remix IDE
+
+Remix IDE is generally used to compile and run Solidity smart contracts. Below are the steps for the compilation, execution, and debugging of the smart contract. 
+ 
+
+Step 1: First clone our github project from here.Open Remix IDE on any of your browsers, Choose solidity as environment.
+```
+git clone https://github.com/NakamotoSans/Contracts
+```
+Step 2:Import the contracts from your local system. Click the Compile button under the Compiler window to compile the contract.
+Step 3: To execute the code, click on the Deploy button under Deploy and Run Transactions window.
+Step 4: After deploying the code click on the method calls under the drop-down of deployed contracts to run the program, and for output, check to click on the drop-down on the console.
+Step 5: For debugging click on the Debug button corresponding to the method call in the console. Here you can check each function call and variable assignments.
 
 
 
