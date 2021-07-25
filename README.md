@@ -109,13 +109,14 @@ cd COntracts/
 	  <td><b>Link Wallet</b></td>
 	  <td><b>Searching Phase</b></td>
   </tr>
+  
+	
   <tr>
-        
     <td><img src="https://github.com/NakamotoSans/Screens/blob/main/Screenshot_2021-07-25-15-06-28-217_com.sans.nakamoto.jpg" width=400 height=670></td>
     <td><img src="https://github.com/NakamotoSans/Screens/blob/main/IMG_20210725_150003.jpg" width=400 height=670></td>
     <td><img src="https://github.com/NakamotoSans/Screens/blob/main/IMG_20210725_150640.jpg" width=400 height=670></td>
   </tr>	
-	<br></br>	
+		
   <tr>
 	  <td><b>Select Pickup and Drop Locations</b></td>
 	  <td><b>Active Ride Requests</b></td>
