@@ -37,45 +37,41 @@ vice.
 
 - We have implemented smart contract addressing the issue of storing critical data necessary at different stages of Taxi Hailing and making it verifiable by all stakeholders in dRyver.
 
--We eliminate the existence of middle agency, Thereby completely removing the regulation of salaries of drivers by corporations. And in that 
+-We eliminate the existence of middle agency, Thereby completely removing the regulation of salaries of drivers by corporations. And in that earning of the driver is solely dependent on the number of rides.  
 
 
 #### Application Workflow Diagram
 ---
 ![](screens/workflow.png)
 
-#### In this application we have Six stages
+#### In this application we have Three Contracts
 ---
 
-1. Admin
-2. Farm-Inspector
-3. Harvester
-4. Exporter
-5. Importer
-6. Processor
+1. User
+2. Driver
+3. Customer
 
-**Admin :** Admin creates new batch which is initial stage of coffee batch.
+**Owner :** Owner deploys the contract.
 
-**Farm-Inspector :**  Farm-inspectors are responsible for inspecting coffee farms and updating the information like coffee family, type of seed and fertilizers used for growing coffee.
+**User :**  User is the base contract containing some common attributes and behaviour of Customers and Drivers.
 
-**Harvester :** Harvesters conducting plucking, hulling , polishing , grading and sorting activities, further updating the information of crop variety, temperature used and humidity maintained during the process.
+**Driver :** This Contract contains essential details of drivers along with some driver-specific methods .
 
-**Exporter :** Exporters are the organization who exports coffee beans throughout the world. Exporter  adds quantity, destination address, ship name, ship number , estimated date and time and exporter id.
-
-**Importer :** Importers imports the coffee from coffee suppliers and  updates quantity, ship name, ship number , transporters information, warehouse name, warehouse address and the importer's address.
-
-**Processor :** Processors are the organizations who processes raw coffee beans by roasting them on particular temperature and humidity and makes it ready for packaging and to sale into markets. Processor adds the information like quantity, temperature , roasting duration , internal batch number , packaging date time, processor name and processor address.
+**Customer :** This contract contains methods that allow customers to request a ride.
 
 #### Included Components
 ---
--  Solidity (Ethereum)
--  Metamask  (Ethereum wallet)
--  Rinkeby test network ( use rinkeby faucet to get ethers on rinkeby network )
--  Infura
+-  Solidity (**Ethereum**)
+-  Metamask  (**Ethereum** wallet)
+-  Mumbai testnet ( **Polygon** Network with **Matic** Faucet )
+-  Remix IDE
 -  Truffle
 -  IPFS
 -  Web3JS
--  Apache and PHP
+-  React Native 
+-  Nodejs (Express)
+-  Google Map Api
+-  Firebase for Google Auth
 
 #### Prerequisites
 ---
@@ -83,61 +79,46 @@ vice.
 - Truffle v4.1.8 (core: 4.1.8) (http://truffleframework.com/docs/getting_started/installation)
 - Solidity v0.4.23
 - Metamask (https://metamask.io) /Ganache Wallet
-> [Please Note : infura.io provider is used for the demo ]
 
 #### Deployment Steps:
 ---
 **Setting up Ethereum Smart Contract:**
 
 ```
-git clone https://github.com/rwaltzsoftware-org/coffee-supplychain-ethereum
-cd coffee-supplychain-ethereum/
+git clone https://github.com/NakamotoSans/Contracts
+cd COntracts/
 ```
+#### UI screenshots of Mobile App:
 
-**Update truffle.js **
+<p align="center">	
+<table>
+	
+  <tr>
+	  <td><b>Welcome Screen</b></td>
+	  <td><b>Login Screen</b></td>
+	  <td><b>Google AUth</b></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/NakamotoSans/Screens/blob/main/IMG_20210725_143841.jpg" width=400 height=670></td>
+    <td><img src="https://github.com/NakamotoSans/Screens/blob/main/IMG_20210725_145106.jpg" width=400 height=670></td>
+    <td><img src="https://github.com/NakamotoSans/Screens/blob/main/IMG_20210725_145547.jpg" width=400 height=670></td>
+  </tr>
+	<br></br>	
+  <tr>
+	  <td><b>Add Driver Details</b></td>
+	  <td><b>Link Wallet</b></td>
+	  <td><b>Searching phase</b></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/NakamotoSans/Screens/blob/main/IMG_20210725_150003.jpg" width=400 height=670></td>
+    <td><img src="https://github.com/NakamotoSans/Screens/blob/main/Screenshot_2021-07-25-15-06-28-217_com.sans.nakamoto.jpg" width=400 height=670></td>
+    <td><img src="https://github.com/NakamotoSans/Screens/blob/main/IMG_20210725_150640.jpg" width=400 height=670></td>
+  </tr>	
+ </table>	
+</p>
 
-```
-var HDWalletProvider = require("truffle-hdwallet-provider");
-module.exports = 
-{
-    networks: 
-    {
-	    development: 
-		{
-	   		host: "localhost",
-	   		port: 8545,
-	   		network_id: "*" // Match any network id
-		},
-    	rinkeby: {
-    	    provider: function() {
-		      var mnemonic = "steel neither fatigue ...";//put ETH wallet 12 mnemonic code	
-		      return new HDWalletProvider(mnemonic, "https://rinkeby.infura.io/8U0AE4DUGSh8lVO3zmma");
-		    },
-		    network_id: '4',
-		    from: '0xab0874cb61d.....',/*ETH wallet 12 mnemonic code wallet address*/
-		}  
-    }
-};
-```
 
-Go to your project folder in terminal then execute :
 
-```
-rm -rf build/
-truffle compile 
-npm install truffle-hdwallet-provider
-truffle migrate --network rinkeby reset
-```
-**Please note:**
-1. After successfully deployment you will get response in bash terminal like below
-```
-Running migration: 1_initial_migration.js
-  Deploying Migrations...
-  ... 0x8be4cb8e9c1be61bb83f2661bb8e8a4fefc31433b68137f88a7088a0bb0cccda
-  Migrations: 0xd0fc5980df528878573d97e91a11b4196b060174
-Saving successful migration to network...
-  ... 0x68483eb11712987b190469033e3b12e04bbe960ffbdbfd508eb7618f91ca7dd6
-Saving artifacts...
-Running migration: 2_deploy_contracts.js
-  Deploying SupplyChainStorage...
-  ... 0x42bd453f05e530d312c6140a848aa111d08e2edb8ec96bd380e78d1fd0ebc444
+
+
+
