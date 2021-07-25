@@ -42,7 +42,7 @@ vice.
 
 #### Application Workflow Diagram
 ---
-![](screens/workflow.png)
+![](https://cdn.discordapp.com/attachments/855127252101758989/868824925425786890/workflow.jpg)
 
 #### In this application we have Three Contracts
 ---
