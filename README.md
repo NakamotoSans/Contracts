@@ -37,7 +37,7 @@ vice.
 
 - We have implemented smart contract addressing the issue of storing critical data necessary at different stages of Taxi Hailing and making it verifiable by all stakeholders in dRyver.
 
--We eliminate the existence of middle agency, Thereby completely removing the regulation of salaries of drivers by corporations. And in that earning of the driver is solely dependent on the number of rides.  
+- We eliminate the existence of middle agency, Thereby completely removing the regulation of salaries of drivers by corporations. And in that earning of the driver is solely dependent on the number of rides.  
 
 
 #### Application Workflow Diagram
