@@ -103,11 +103,11 @@ cd COntracts/
     <td><img src="https://github.com/NakamotoSans/Screens/blob/main/IMG_20210725_145106.jpg" width=400 height=670></td>
     <td><img src="https://github.com/NakamotoSans/Screens/blob/main/IMG_20210725_145547.jpg" width=400 height=670></td>
   </tr>
-	<br></br>	
+		
   <tr>
-	  <td><b>Select Pickup and Drop</b></td>
-	  <td><b>Active Ride Request</b></td>
-	  <td><b></b></td>
+	  <td><b>Add Driver Details</b></td>
+	  <td><b>Link Wallet</b></td>
+	  <td><b>Searching Phase</b></td>
   </tr>
   <tr>
         
