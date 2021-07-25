@@ -141,6 +141,7 @@ Remix IDE is generally used to compile and run Solidity smart contracts. Below a
 Step 1: First clone our github project from here.Open Remix IDE on any of your browsers, Choose solidity as environment.
 ```
 git clone https://github.com/NakamotoSans/Contracts
+cd Contracts
 ```
 Step 2:Import the contracts from your local system. Click the Compile button under the Compiler window to compile the contract.
 Step 3: To execute the code, click on the Deploy button under Deploy and Run Transactions window.
