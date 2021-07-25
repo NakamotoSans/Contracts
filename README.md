@@ -131,7 +131,7 @@ cd COntracts/
  </table>	
 </p>
 
-####How to use Remix for deploying contracts
+#### How to use Remix for deploying contracts
 
 Steps to Execute Solidity Smart Contract using Remix IDE
 
