@@ -114,6 +114,17 @@ cd COntracts/
     <td><img src="https://github.com/NakamotoSans/Screens/blob/main/Screenshot_2021-07-25-15-06-28-217_com.sans.nakamoto.jpg" width=400 height=670></td>
     <td><img src="https://github.com/NakamotoSans/Screens/blob/main/IMG_20210725_150640.jpg" width=400 height=670></td>
   </tr>	
+	<br></br>	
+  <tr>
+	  <td><b>Add Driver Details</b></td>
+	  <td><b>Link Wallet</b></td>
+	  <td><b>Searching phase</b></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/NakamotoSans/Screens/blob/main/Screenshot_2021-07-25-15-06-57-049_com.sans.nakamoto.jpg" width=400 height=670></td>
+    <td><img src="https://github.com/NakamotoSans/Screens/blob/main/IMG_20210725_150832.jpg" width=400 height=670></td>
+    <td><img src="https://github.com/NakamotoSans/Screens/blob/main/IMG_20210725_151310.jpg" width=400 height=670></td>
+  </tr>	
  </table>	
 </p>
 
