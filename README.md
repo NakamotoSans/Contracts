@@ -32,9 +32,9 @@ Several scandals have emerged out of Uber’s corporate culture as of late. Uber
 
 ### Application Workflow Diagram 📝
 ---
-![](https://cdn.discordapp.com/attachments/855127252101758989/868824925425786890/workflow.png)
+![](https://github.com/NakamotoSans/Screens/blob/main/workflow.png?raw=true)
 
-#### In this application we have Three Contracts
+### Smarts Contracts 😍
 ---
 
 1. User
@@ -49,7 +49,7 @@ Several scandals have emerged out of Uber’s corporate culture as of late. Uber
 
 **Customer :** This contract contains methods that allow customers to request a ride.
 
-#### Included Components
+### Included Components
 ---
 -  Solidity (**Ethereum**)
 -  Metamask  (**Ethereum** wallet)
@@ -63,22 +63,8 @@ Several scandals have emerged out of Uber’s corporate culture as of late. Uber
 -  Google Map Api
 -  Firebase for Google Auth
 
-#### Prerequisites
----
-- Nodejs v9.10 or above
-- Truffle v4.1.8 (core: 4.1.8) (http://truffleframework.com/docs/getting_started/installation)
-- Solidity v0.4.23
-- Metamask (https://metamask.io) /Ganache Wallet
 
-#### Deployment Steps:
----
-**Setting up Ethereum Smart Contract:**
-
-```
-git clone https://github.com/NakamotoSans/Contracts
-cd COntracts/
-```
-#### UI screenshots of Mobile App:
+### UI screenshots of Mobile App:
 
 <p align="center">	
 <table>
@@ -121,7 +107,23 @@ cd COntracts/
  </table>	
 </p>
 
-#### How to use Remix for deploying contracts
+
+### Prerequisites
+---
+- Nodejs v9.10 or above
+- Truffle v4.1.8 (core: 4.1.8) (http://truffleframework.com/docs/getting_started/installation)
+- Solidity v0.8.0
+- Metamask (https://metamask.io) /Ganache Wallet
+
+### Deployment Steps:
+---
+**Setting up Ethereum Smart Contract:**
+
+```
+git clone https://github.com/NakamotoSans/Contracts
+cd COntracts/
+```
+#### Smart contracts
 
 Steps to Execute Solidity Smart Contract using Remix IDE
 
